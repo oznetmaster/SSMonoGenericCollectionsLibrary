@@ -36,7 +36,7 @@ using Crestron.SimplSharp;
 namespace SSMono.Collections.Generic
 	{
 	[Serializable]
-#if !TARGET_SSHARP
+#if !SSHARP
 	[DebuggerDisplay ("Count={Count}")]
 	[DebuggerTypeProxy (typeof (CollectionDebuggerView<,>))]
 	public class HashSet<T> : ICollection<T>, ISerializable, IDeserializationCallback
@@ -83,7 +83,7 @@ namespace SSMono.Collections.Generic
 		int threshold;
 
 		IEqualityComparer<T> comparer;
-#if !TARGET_SSHARP
+#if !SSHARP
 		SerializationInfo si;
 #endif
 
@@ -126,7 +126,7 @@ namespace SSMono.Collections.Generic
 				Add (item);
 			}
 
-#if !TARGET_SSHARP
+#if !SSHARP
 		protected HashSet (SerializationInfo info, StreamingContext context)
 			{
 			si = info;
@@ -552,7 +552,7 @@ namespace SSMono.Collections.Generic
 			return HashSetEqualityComparer<T>.Instance;
 			}
 
-#if !TARGET_SSHARP
+#if !SSHARP
 		[SecurityPermission (SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
 		public virtual void GetObjectData (SerializationInfo info, StreamingContext context)
 			{
