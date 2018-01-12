@@ -129,7 +129,7 @@ namespace SSMono.Collections.Generic
 			set { System.Threading.Thread.SetData (_cachedPathStore, value); }
 		}
 #else
-#if !TARGET_SSHARP
+#if !SSHARP
 //		[ThreadStatic]
 #endif
 		static List<Node> cached_path;

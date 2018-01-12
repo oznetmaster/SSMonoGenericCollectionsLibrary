@@ -39,7 +39,7 @@ using System.Collections.Generic;
 namespace SSMono.Collections.Generic
 	{
 	[Serializable]
-#if !TARGET_SSHARP
+#if !SSHARP
 	[DebuggerDisplay ("Count={Count}")]
 	[DebuggerTypeProxy (typeof (CollectionDebuggerView<,>))]
 	public class SortedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollection<KeyValuePair<TKey, TValue>>, IEnumerable<KeyValuePair<TKey, TValue>>, IDictionary, ICollection, IEnumerable, ISerializable
@@ -139,7 +139,7 @@ namespace SSMono.Collections.Generic
 				Add (entry.Key, entry.Value);
 			}
 
-#if !TARGET_SSHARP
+#if !SSHARP
 		protected SortedDictionary (SerializationInfo info, StreamingContext context)
 			{
 			hlp = (NodeHelper)info.GetValue ("Helper", typeof (NodeHelper));
@@ -256,7 +256,7 @@ namespace SSMono.Collections.Generic
 			return n != null;
 			}
 
-#if !TARGET_SSHARP
+#if !SSHARP
 		[SecurityPermission (SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
 		public virtual void GetObjectData (SerializationInfo info, StreamingContext context)
 			{
@@ -431,7 +431,7 @@ namespace SSMono.Collections.Generic
 		#endregion
 
 		[Serializable]
-#if !TARGET_SSHARP
+#if !SSHARP
 		[DebuggerDisplay ("Count={Count}")]
 		[DebuggerTypeProxy (typeof (CollectionDebuggerView<,>))]
 #endif
@@ -575,7 +575,7 @@ namespace SSMono.Collections.Generic
 			}
 
 		[Serializable]
-#if !TARGET_SSHARP
+#if !SSHARP
 		[DebuggerDisplay ("Count={Count}")]
 		[DebuggerTypeProxy (typeof (CollectionDebuggerView<,>))]
 #endif
